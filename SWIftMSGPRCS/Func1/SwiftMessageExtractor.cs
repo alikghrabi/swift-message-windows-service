@@ -28,8 +28,12 @@ namespace SWIftMSGPRCS.Func1
             if (startIndex == -1) return "DEFAULT";
 
             int endIndex = message.IndexOf(endTag, startIndex + startTag.Length, StringComparison.Ordinal);
-            return endIndex == -1 ? message.Substring(startIndex).Trim() : message.Substring(startIndex, endIndex - startIndex).Trim();
+            if (endIndex == -1)
+                return message.Substring(startIndex).Trim();
+
+            return message.Substring(startIndex, (endIndex - startIndex) + endTag.Length).Trim();
         }
+
 
         public static string ExtractOwnBIC(string message)
         {

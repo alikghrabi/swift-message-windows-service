@@ -59,7 +59,7 @@ namespace SWIftMSGPRCS.Func1
                     cmd.Parameters.AddWithValue("@Block1", SwiftMessageExtractor.ExtractBlock(messageContent, "{1:", "}"));
                     cmd.Parameters.AddWithValue("@Block2", SwiftMessageExtractor.ExtractBlock(messageContent, "{2:", "}"));
                     cmd.Parameters.AddWithValue("@Block3", SwiftMessageExtractor.ExtractBlock(messageContent, "{3:", "}}"));
-                    cmd.Parameters.AddWithValue("@Block4", SwiftMessageExtractor.ExtractBlock(messageContent, "{4:", "}"));
+                    cmd.Parameters.AddWithValue("@Block4", SwiftMessageExtractor.ExtractBlock(messageContent, "{4:", "-}"));
 
                     int messageId = (int)cmd.ExecuteScalar();
                     transaction.Commit();

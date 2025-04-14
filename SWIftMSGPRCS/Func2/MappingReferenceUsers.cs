@@ -27,9 +27,9 @@ namespace SWIftMSGPRCS.Func2
                 {
                     Console.WriteLine($"Processing Message ID: {msg.IdKey}, UserReference: {msg.UserReference}");
 
-                    if (string.IsNullOrEmpty(msg.UserReference) || msg.UserReference == "DEFAULT")
+                    if (string.IsNullOrEmpty(msg.UserReference))
                     {
-                        Console.WriteLine($"Skipping Message ID {msg.IdKey} due to empty or default UserReference.");
+                        Console.WriteLine($"Skipping Message ID {msg.IdKey} due to empty UserReference.");
                         continue;
                     }
 
